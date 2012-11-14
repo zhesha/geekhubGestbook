@@ -1,0 +1,24 @@
+{% extends 'GeekhubGestbookBundle::layout.html.twig' %}
+
+{% block body %}
+    <form action="{{ path('geekhub_gestbook_add') }}" method="POST" class="addForm">
+        <label for="name">name</label>
+        <input type="text" id="name" name="name">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email">
+        <input type="submit" class="btn">
+        <br><br>
+        <label for="body">body</label>
+        <textarea id="body" name="body"></textarea>
+    </form>
+    <div style="height: 500px; overflow: auto;">
+        {% for record in records %}
+            <div style="border-top: 1px solid black;">
+                {{ record.name }}
+                <a href="{{ path("geekhub_gestbook_edit", {'id': record.id}) }}">edit</a>
+                <a href="{{ path("geekhub_gestbook_del", {'id': record.id}) }}" onclick="if(confirm('do you realy want delete it?')){return true} else {return false}">delete</a>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

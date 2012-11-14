@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/geekhubgestbook/bootstrap/css/bootstrap.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/geekhubgestbook/bootstrap/css/bootstrap-responsive.css') }}" />
+    <style type="text/css">
+            /*html, body{
+                height: 100%;
+            }*/
+        .body{
+            /*height: 100%;*/
+            padding: 80px 0;
+        }
+        .addForm{
+            padding: 10px 0;
+        }
+        .addForm [type="text"], .addForm [type="email"]{
+            width: 100px;
+            vertical-align: top;
+        }
+        .addForm [type="submit"]{
+            vertical-align: top;
+        }
+        .addForm textarea{
+            vertical-align: top;
+            width: 385px;
+        }
+        label{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            HEADER
+        </div>
+    </div>
+</div>
+
+{#<div style="height: 80px; width: 100%; position: absolute; border-bottom: 1px solid black;">
+    <h1 style="float: left;">HEADER</h1>
+    <h1 style="float: right;">HEADER</h1>
+</div>#}
+<div class="body container">
+    {% block body %}{% endblock %}
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="container">
+            FOOTER
+        </div>
+    </div>
+</div>
+
+{#<div style="height: 80px; width: 100%; border-top: 1px solid black;position: absolute; bottom: 0;">
+    <h1 style="float: left;">FOOTER</h1>
+    <h1 style="float: right;">FOOTER</h1>
+</div>#}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

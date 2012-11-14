@@ -1,0 +1,7 @@
+parameters:
+#    geekhub_gestbook.example.class: Geekhub\GestbookBundle\Example
+
+services:
+#    geekhub_gestbook.example:
+#        class: %geekhub_gestbook.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

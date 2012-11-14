@@ -1,0 +1,19 @@
+geekhub_gestbook_homepage:
+    pattern:  /gestbook
+    defaults: { _controller: GeekhubGestbookBundle:Default:index }
+
+geekhub_gestbook_add:
+    pattern:  /gestbook/add
+    defaults: { _controller: GeekhubGestbookBundle:Default:add }
+
+geekhub_gestbook_edit:
+    pattern:  /gestbook/edit/{id}
+    defaults: { _controller: GeekhubGestbookBundle:Default:edit }
+
+geekhub_gestbook_change:
+    pattern:  /gestbook/change/{id}
+    defaults: { _controller: GeekhubGestbookBundle:Default:change }
+
+geekhub_gestbook_del:
+    pattern:  /gestbook/del/{id}
+    defaults: { _controller: GeekhubGestbookBundle:Default:del }

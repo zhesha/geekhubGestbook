@@ -1,0 +1,15 @@
+{% extends 'GeekhubGestbookBundle::layout.html.twig' %}
+
+{% block body %}
+    <form action="{{ path('geekhub_gestbook_change', {'id':record.id}) }}" method="POST" class="addForm">
+        <label for="name">name</label>
+        <input type="text" id="name" name="name" value="{{ record.name }}">
+        <input type="hidden" name="id" value="{{ record.id }}">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" value="{{ record.email }}">
+        <input type="submit" class="btn">
+        <br><br>
+        <label for="body">body</label>
+        <textarea id="body" name="body">{{ record.body }}</textarea>
+    </form>
+{% endblock %}
