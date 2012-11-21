@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'WhiteOctober\\PagerfantaBundle' => $vendorDir . '/white-october/pagerfanta-bundle/',
     'Twig_Extensions_' => $vendorDir . '/twig/extensions/lib/',
     'Twig_' => $vendorDir . '/twig/twig/lib/',
     'Symfony\\Bundle\\SwiftmailerBundle' => $vendorDir . '/symfony/swiftmailer-bundle/',
@@ -16,6 +17,7 @@ return array(
     'Sensio\\Bundle\\GeneratorBundle' => $vendorDir . '/sensio/generator-bundle/',
     'Sensio\\Bundle\\FrameworkExtraBundle' => $vendorDir . '/sensio/framework-extra-bundle/',
     'Sensio\\Bundle\\DistributionBundle' => $vendorDir . '/sensio/distribution-bundle/',
+    'Pagerfanta\\' => $vendorDir . '/pagerfanta/pagerfanta/src/',
     'Monolog' => $vendorDir . '/monolog/monolog/src/',
     'Metadata\\' => $vendorDir . '/jms/metadata/src/',
     'JMS\\SecurityExtraBundle' => $vendorDir . '/jms/security-extra-bundle/',

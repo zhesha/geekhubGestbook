@@ -1,7 +1,3 @@
-geekhub_gestbook_homepage:
-    pattern:  /gestbook
-    defaults: { _controller: GeekhubGestbookBundle:Default:index }
-
 geekhub_gestbook_add:
     pattern:  /gestbook/add
     defaults: { _controller: GeekhubGestbookBundle:Default:add }
@@ -17,3 +13,7 @@ geekhub_gestbook_change:
 geekhub_gestbook_del:
     pattern:  /gestbook/del/{id}
     defaults: { _controller: GeekhubGestbookBundle:Default:del }
+
+geekhub_gestbook_homepage:
+    pattern:  /gestbook/{page}
+    defaults: { _controller: GeekhubGestbookBundle:Default:index, page:1 }

@@ -13,7 +13,7 @@
             }*/
         .body{
             /*height: 100%;*/
-            padding: 80px 0;
+            padding: 100px 0;
         }
         .addForm{
             padding: 10px 0;
@@ -32,6 +32,9 @@
         label{
             display: inline;
         }
+        .navbar-inner .container{
+            float: left;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +43,7 @@
         <div class="container">
             HEADER
         </div>
+        {{ pagerfanta(pager, 'twitter_bootstrap') }}
     </div>
 </div>
 
@@ -56,6 +60,7 @@
         <div class="container">
             FOOTER
         </div>
+        {{ pagerfanta(pager, 'twitter_bootstrap') }}
     </div>
 </div>
 

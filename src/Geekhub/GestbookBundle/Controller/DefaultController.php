@@ -6,12 +6,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use \Geekhub\GestbookBundle\Entity\record;
 use \Geekhub\GestbookBundle\Form\recordType;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\ArrayAdapter;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction($page)
     {
         $records = $this->getDoctrine()->getRepository('GeekhubGestbookBundle:record')->findAll();
+
+        $adapter = new ArrayAdapter($records);
+        $pagerfanta = new Pagerfanta($adapter);
+        $maxPerPage = $this->container->getParameter('maxPerPage');
+        $pagerfanta->setMaxPerPage($maxPerPage); // 10 by default
+        $pagerfanta->setCurrentPage($page);
+
         $ad = new record();
         $form = $this->createFormBuilder($ad)
             ->add('name')
@@ -21,8 +31,9 @@ class DefaultController extends Controller
         ;
         //$form = new recordType();
         return $this->render('GeekhubGestbookBundle:Default:index.html.twig', array(
-            'records'=> $records,
-            'form' => $form->createView()
+            'records'=> $pagerfanta->getCurrentPageResults(),
+            'form' => $form->createView(),
+            'pager' => $pagerfanta
         ));
     }
 
