@@ -30,30 +30,17 @@ class __TwigTemplate_6acd7f23f8be2c56c0ffc9572639460f extends Twig_Template
         // line 4
         echo "    <form action=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("geekhub_gestbook_change", array("id" => $this->getAttribute($this->getContext($context, "record"), "id"))), "html", null, true);
-        echo "\" method=\"POST\" class=\"addForm\">
-        <label for=\"name\">name</label>
-        <input type=\"text\" id=\"name\" name=\"name\" value=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "record"), "name"), "html", null, true);
-        echo "\">
-        <input type=\"hidden\" name=\"id\" value=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "record"), "id"), "html", null, true);
-        echo "\">
-        <label for=\"email\">email</label>
-        <input type=\"email\" id=\"email\" name=\"email\" value=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "record"), "email"), "html", null, true);
-        echo "\">
+        echo "\" method=\"POST\" ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
+        echo ">
+        ";
+        // line 5
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
+        echo "
         <input type=\"submit\">
-        <br><br>
-        <label for=\"body\">body</label>
-        <textarea id=\"body\" name=\"body\">";
-        // line 13
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "record"), "body"), "html", null, true);
-        echo "</textarea>
     </form>
-";
+
+    ";
     }
 
     public function getTemplateName()
@@ -68,6 +55,6 @@ class __TwigTemplate_6acd7f23f8be2c56c0ffc9572639460f extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  51 => 13,  44 => 9,  39 => 7,  35 => 6,  29 => 4,  26 => 3,);
+        return array (  36 => 5,  29 => 4,  26 => 3,);
     }
 }

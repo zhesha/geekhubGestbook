@@ -3,6 +3,7 @@
 namespace Geekhub\GestbookBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Geekhub\GestbookBundle\Entity\record
@@ -25,6 +26,7 @@ class record
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\Regex("/^[a-zA-Z]+$/")
      */
     private $name;
 
@@ -32,6 +34,10 @@ class record
      * @var string $email
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = false
+     * )
      */
     private $email;
 
@@ -39,6 +45,10 @@ class record
      * @var string $body
      *
      * @ORM\Column(name="body", type="text")
+     * @Assert\MinLength(
+     *     limit=3,
+     *     message="Your message must have at least {{ limit }} characters."
+     * )
      */
     private $body;
 
