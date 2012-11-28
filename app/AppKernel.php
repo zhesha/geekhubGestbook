@@ -22,7 +22,8 @@ class AppKernel extends Kernel
             new Geekhub\GestbookBundle\GeekhubGestbookBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            //new FOS\UserBundle\FOSUserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Geekhub\UserBundle\GeekhubUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

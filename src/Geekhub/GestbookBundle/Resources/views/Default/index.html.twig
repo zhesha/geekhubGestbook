@@ -17,6 +17,7 @@
         <textarea id="body" name="body"></textarea>
     </form>#}
     <div style="height: 500px; overflow: auto;">
+        {{ pagerfanta(pager, 'twitter_bootstrap') }}
         {% for record in records %}
             <div style="border-top: 1px solid black;">
                 {{ record.name }}
